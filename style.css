@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color: hsla(var(--hue), 5%, 7%, 1);
+  --text-color: hsla(var(--hue), 40%, 98%, 1);
+  --primary-color: hsla(var(--hue), 100%, 63%, 1);
+  --controls-bg-color: hsla(var(--hue), 0%, 14%, 1);
+  --button-secondary: hsla(var(--hue), 40%, 98%, 1);
+
+  --bg-color-cards: rgba(var(225, 225, 230, 1));
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --bg-color: hsla(var(--hue), 40%, 98%, 1);
+  --text-color: hsla(var(--hue), 5%, 7%, 1);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toogle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+
+  color: var(--text-color);
+}
+
+.sr-only {
+  width: 0.0625rem;
+  height: 0.0625rem;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -0.0625rem;
+  padding: 0rem;
+  border: 0;
+  appearance: none;
+}
+
+.card {
+  position: absolute;
+  overflow: hidden;
+
+  margin: -0.0625rem;
+  padding: 0rem;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  gap: 9rem;
+  justify-content: space-evenly;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  width: 3.125rem;
+}
+
+.flex {
+  display: flex;
+}
+
+#timer {
+  font-size: 15rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 1.6rem;
+  background-color: var(--controls-bg-color);
+  border-radius: 999rem;
+}
+
+#controls-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 5rem;
+  background-color: var(--controls-bg-color);
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-color);
+
+  cursor: pointer;
+
+  font-size: 8rem;
+}
+
+.selected {
+  background-color: #02799d;
+  max-width: 100%;
+  
+}
+
+.secondary {
+  color: var(--button-secondary);
+}
+
+/* controls */
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
